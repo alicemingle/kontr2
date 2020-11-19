@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.1)
+
+project(CcomplexVector)
+
+include_directories(${PROJECT_SOURCE_DIR})
+
+set (COMPLEX_VECTOR_SRC  main.cpp Autotest.cpp Complex_Number.cpp Complex_Vector.cpp)
+set (COMPLEX_VECTOR_HDR Autotest.h Complex_Number.h Complex_Vector.h)
+
+add_executable (${PROJECT_NAME} ${COMPLEX_VECTOR_SRC} ${COMPLEX_VECTOR_HDR})

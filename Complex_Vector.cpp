@@ -54,16 +54,18 @@ ComplexVector ComplexVector::operator-(const ComplexVector& arg) {
     }
     return result;
 }
-ComplexVector ComplexVector::operator*(const ComplexVector& arg) {
+ComplexNumber ComplexVector::operator*(const ComplexVector& arg) {
     ComplexVector result = *this;
     if (numbers != arg.numbers) {
         cout << "Error: vectors have different dimensions." << endl;
         return result;
     }
+    ComplexNumber sum(0,0);
     for (int i = 0; i < numbers; ++i) {
         result.data[i] = result.data[i] * arg.data[i];
+        sum += result.data[i];
     }
-    return result;
+    return sum;
 }
 ComplexNumber ComplexVector::operator[](int pos) {
     ComplexNumber result;
